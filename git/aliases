@@ -1,0 +1,13 @@
+[alias]
+	al = !git config --list | grep alias
+	dirdft = difftool --dir-diff
+	dft = difftool
+	mt = mergetool
+	co = checkout
+	nb = checkout -b
+	nmb = !git co master && git pull -p && git nb
+	st = status -s
+	ci = commit -m
+	clear = reset HEAD --hard
+	cp = cherry-pick
+	history = log --graph --pretty=format:'%C(white)%h%Creset - %C(bold blue)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
