@@ -1,5 +1,5 @@
 [alias]
-	al = !git config --list | grep alias
+	al = !git config --list | grep alias | sort
 	dirdft = difftool --dir-diff
 	dft = difftool
 	mt = mergetool
