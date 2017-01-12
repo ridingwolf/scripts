@@ -34,8 +34,8 @@
 
 [difftool "bc"]
     trustExitCode = true
-    cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\"
+    path = "/usr/local/bin/bcomp" 
 
 [mergetool "bc"]
     trustExitCode = true
-    cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    path = "/usr/local/bin/bcomp" 
