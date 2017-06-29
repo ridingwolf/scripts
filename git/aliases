@@ -10,4 +10,5 @@
 	ci = commit -m
 	clear = reset HEAD --hard
 	cp = cherry-pick
+	# WIP pl = !git pull $1 $2 --ff-only || git pull $1 $2 --rebase
 	history = log --graph --pretty=format:'%C(white)%h%Creset - %C(bold blue)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
