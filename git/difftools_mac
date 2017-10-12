@@ -34,8 +34,10 @@
 
 [difftool "bc"]
     trustExitCode = true
+    # requires installing commandline tools: Beyond Compare(menu) -> Install commandline tools
     path = "/usr/local/bin/bcomp" 
 
 [mergetool "bc"]
     trustExitCode = true
+    # requires installing commandline tools: Beyond Compare(menu) -> Install commandline tools
     path = "/usr/local/bin/bcomp" 
