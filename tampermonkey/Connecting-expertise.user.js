@@ -12,21 +12,36 @@
 const totalBookedHours = "total-booked-hours";
 const tally = "tally";
 const tracked = 'tracked';
+const recalculate = 'recalculate';
 
 function addBookedHoursLine(){
-    $('form table:first-of-type tr:last-of-type')
-        .after(`<tr class="${totalBookedHours}"><td class="label">Totaal ingegeven</td><td class="${tally}"></td></tr>`);
+    $('form#form table:first-of-type tr:last-of-type').after(`<tr class="${totalBookedHours}"><td class="label">Totaal ingegeven <button id="${recalculate}">&#8634;</button></td><td><div class="${tally}"></div></td></tr>`);
+    $(`#${recalculate}`).on('click', (event) => {
+        event.preventDefault();
+        updateTrackedFields();
+    });
 }
 
 function calculateHours(){
-    console.log('calculating... or at least it should be');
+    const days = $(`.tsInput.${tracked}`)
+        .toArray()
+        .map((element) => {
+             const $tracked = $(element);
+             const $input = $tracked.children('input');
+
+             return $input.length > 0 ?  $input.val() : $tracked.text().trim();
+        })
+        .map(text => Number.isNaN(text) ? 0 : new Number(text).valueOf());
+
+    const hours = days.length > 0 ? days.reduce((total = 0, val) => total + val) : 0;
+    $(`.${tally}`).text(hours);
 }
 
 function updateTrackedFields(){
-    console.log('update tracked fields');
-    // selected untracked fields
-    // on change/blur caculate hours
-    // set tracked class
+    $(`.tsInput:not(.${tracked})`)
+        .addClass(tracked)
+        .find('input[type="text"]')
+        .on('change blur', calculateHours);
 
     // recalculate
     calculateHours();
@@ -41,7 +56,8 @@ function evaluateTrackedFields(){
 }
 
 function addStyles(){
-    GM_addStyle(`.${tracked} { background-color: green; }`);
+    GM_addStyle(`.${tracked} input[type="text"] { background-color: orange !important; }`);
+    GM_addStyle(`.${tracked} { color: orange !important; }`);
     GM_addStyle(`.${totalBookedHours} .label { font-weight: 600; color: orange; }`);
 }
 
