@@ -11,3 +11,4 @@
 	cp = cherry-pick
 	# WIP pl = !git pull $1 $2 --ff-only || git pull $1 $2 --rebase
 	history = log --graph --pretty=format:'%C(white)%h%Creset - %C(bold blue)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+	update-fork = !git co master && git fetch --all --prune && git merge upstream-source/master --ff-only && git push origin master
