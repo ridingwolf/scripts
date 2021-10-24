@@ -1,0 +1,75 @@
+[user]
+
+	# alwyas use user-config
+	useconfigonly = true
+	
+[alias]
+
+	# List aliases.
+	aliases = config --get-regexp alias
+
+	# open current directory changes in configured external diff-tool
+	dir-dft = difftool --dir-diff
+	# open current changes in configured external diff-tool
+	dft = difftool
+	#open merge conficts in configured excternal diff-tool
+	mt = mergetool
+ 
+	co = checkout
+	# checkout new branch based on the current branch
+	nb = checkout -b
+	# checkout new branch based on 'main'
+	nmb = !git co main && git pull -p && git nb
+
+	# status using short notition
+	st = status -s
+
+	# commit with single line message
+	ci = commit -m
+
+	cp = cherry-pick
+	
+	# show current repository history
+	history = log --graph --pretty=format:'%C(white)%h%Creset - %C(bold blue)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+	
+	# update 'origin main' with data from the 'upstream-source main' (fork)
+	update-fork = !git co main && git fetch --all --prune && git merge upstream-source/main --ff-only && git push origin main
+
+[color]
+
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+
+	# Detect copies as well as renames.
+	renames = copies
+
+[diff "bin"]
+
+	# Use `hexdump` to diff binary files.
+	textconv = hexdump -v -C
+
+[init]
+
+	defaultBranch = main
