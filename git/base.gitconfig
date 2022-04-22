@@ -54,12 +54,6 @@
 	old = red # deletions
 	new = green # additions
 
-[color "status"]
-
-	added = yellow
-	changed = green
-	untracked = cyan
-
 [diff]
 
 	# Detect copies as well as renames.
