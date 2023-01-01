@@ -1,36 +1,14 @@
 [diff]
    tool = bc
-   #default tool BC, can be overiden in config on local machine
-   #tool = meld
 
 [difftool]
     prompt = false
 
 [merge]
   tool = bc
-   #default tool BC, can be overiden in config on local machine
-  #tool = meld
 
 [mergetool]
   prompt = false
-
-# MELD
-[alias]
-    dft-meld = difftool -t meld
-    mt-meld = mergetool -t meld 
-
-[difftool "meld"]
-    trustExitCode = true
-    path = "C:/Program Files (x86)/Meld/Meld.exe"
-
-[mergetool "meld"]
-  trustExitCode = true
-  path = "C:/Program Files (x86)/Meld/Meld.exe"
-
-#BEYOND COMPARE
-[alias]
-    dft-bc = difftool -t bc
-    mt-bc = mergetool -t bc
 
 [difftool "bc"]
     trustExitCode = true
