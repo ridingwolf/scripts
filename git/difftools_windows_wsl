@@ -1,0 +1,21 @@
+[diff]
+   tool = bc
+
+[difftool]
+    prompt = false
+
+[merge]
+  tool = bc
+
+[mergetool]
+  prompt = false
+
+# to use the "BComp.exe" command "C:/Program Files/Beyond Compare 4" has to be added to the windows PATH
+
+[difftool "bc"]
+    trustExitCode = true
+    cmd= BComp.exe "$(wslpath -aw $LOCAL)" "$(wslpath -aw $REMOTE)"
+
+[mergetool "bc"]
+    trustExitCode = true
+    cmd = BComp.exe "$(wslpath -aw $LOCAL)" "$(wslpath -aw $REMOTE)" "$(wslpath -aw $BASE)" "$(wslpath -aw $MERGED)"
