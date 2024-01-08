@@ -27,20 +27,6 @@
           "type": "path"
         },
         {
-          "background": "#FCA17D",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "properties": {
-            "branch_icon": " <#ffffff>\ue0a0 </>",
-            "fetch_stash_count": true,
-            "fetch_status": false,
-            "fetch_upstream_icon": true
-          },
-          "style": "powerline",
-          "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}) ",
-          "type": "git"
-        },
-        {
           "background": "#76b367",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
@@ -106,15 +92,37 @@
       "newline": true,
       "segments": [
         {
+          "foreground": "#45F1C2",
+          "style": "plain",
+          "template": " <b>\u26a1</b>",
+          "type": "text"
+        },
+        {
           "foreground": "#cd5e42",
           "style": "plain",
           "template": "\ue3bf ",
           "type": "root"
         },
         {
-          "foreground": "#CD4277",
-          "style": "plain",
-          "template": " <#45F1C2><b>\u26a1</b></><b>{{ .UserName }}</b> <#26C6DA>\u276f</><#45F1C2>\u276f</>",
+          "background": "#444444",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": " <#ffffff>\ue0a0 </>",
+            "fetch_stash_count": true,
+            "fetch_status": false,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "type": "git"
+        },
+        {
+          "background": "#444444",
+          "background_templates": [],
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": "<#26C6DA>\u276f<#45F1C2>\u276f",
           "type": "text"
         }
       ],
