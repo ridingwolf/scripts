@@ -100,16 +100,11 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#45F1C2",
-          "style": "plain",
-          "template": " <b>\u26a1</b>",
+          "background": "#444444",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "template": "<#26C6DA>\udb80\udfe9 ",
           "type": "text"
-        },
-        {
-          "foreground": "#cd5e42",
-          "style": "plain",
-          "template": "\ue3bf ",
-          "type": "root"
         },
         {
           "background": "#444444",
@@ -122,7 +117,7 @@
             "fetch_upstream_icon": true
           },
           "style": "powerline",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
           "type": "git"
         },
         {
