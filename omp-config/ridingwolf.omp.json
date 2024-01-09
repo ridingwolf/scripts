@@ -89,7 +89,7 @@
           "foreground": "#193549",
           "trailing_diamond": "\ue0b4",
           "style": "diamond",
-          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 \ueb2d ",
+          "template": " {{ if eq \"Charging\" .State.String }}\ueb2d{{ end }}{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}% ",
           "type": "battery"
         }
       ],
